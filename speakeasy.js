@@ -51,7 +51,7 @@ function generateFields(parameters) {
 
 
 //Page: /thank-you
-//Waiting for member personalise page to be created by memberstack, so once the page is availabel, the form data along with the member id and referral parameters are sent along the form submission
+//Waiting for member personalised page to be created by memberstack, so once the page is available, the form data along with the member id and referral parameters are sent along the form submission
 $(document).ready(function () {
 	$('#event-member-form-btn').css("display", "none");
 	let referrer = sessionStorage.getItem('refs');
@@ -95,4 +95,11 @@ $(document).ready(function () {
 	  })
   });
 
-  
+//members page 
+
+//the section #dummy-topics are set to show only when if user has no event preferences selected during onboarding, so this code does check that is there are any items inside collection list div aka #preferredEvents, if no, then hide the outer div enclosing it(#selected-topics) and show dummy div(#dummy-topics)
+  	if($("#preferredEvents").length === 0){	
+  	//if no items inside collection list
+    $('#selected-topics').hide(); //hide that div
+    $('#dummy-topics').show(); //and show the dummy div
+ 		}
