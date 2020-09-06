@@ -136,3 +136,10 @@ $(document).ready(function() {
     $('.text-block-38').hide()
     }
 });
+
+//event cms page
+//this script is depreciated, it's used to show the avatar of attendees with condition that only display them if the attendees > 1
+const showAvatar = $('.collection-list-16').length;
+    if(showAvatar.length < 1) {
+    $('.div-block-77').hide()
+    }
