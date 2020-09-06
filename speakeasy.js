@@ -110,3 +110,17 @@ $(document).ready(function() {
 	const eventsCounter = $('.events-item-counter').length;
 	$('.events-counter').text(eventsCounter);
 });
+
+
+//event cms page
+//script to override snipcart order confirmation screen
+document.addEventListener('snipcart.ready', function() {
+	Snipcart.api.session.setLanguage('en', {
+			"confirmation": {
+				"thank_you_for_your_order": "Thanks for signing up! You'll receive a confirmation email & Zoom link within 24 hours."
+		},
+							"header" : {
+										"title_cart_summary": "Ticket Summary"
+	}
+	});
+});
