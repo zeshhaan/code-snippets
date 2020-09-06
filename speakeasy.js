@@ -95,11 +95,18 @@ $(document).ready(function () {
 	  })
   });
 
-//members page 
-
+//Page: members page 
 //the section #dummy-topics are set to show only when if user has no event preferences selected during onboarding, so this code does check that is there are any items inside collection list div aka #preferredEvents, if no, then hide the outer div enclosing it(#selected-topics) and show dummy div(#dummy-topics)
   	if($("#preferredEvents").length === 0){	
   	//if no items inside collection list
     $('#selected-topics').hide(); //hide that div
     $('#dummy-topics').show(); //and show the dummy div
  		}
+
+//Page: members page
+//This script is depreciated as for now but we will use it in future
+//This script counts the item inside the upcoming events div and returns the sum and could be conditionally used to show, say "No. of events attended"
+$(document).ready(function() {
+	const eventsCounter = $('.events-item-counter').length;
+	$('.events-counter').text(eventsCounter);
+});
