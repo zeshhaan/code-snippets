@@ -1,0 +1,98 @@
+<!-- SITE WIDE MARKUP -->
+<order>
+    <layout class="snipcart-layout--large snipcart-cart__order-container">
+
+        <!-- SNIPCART PAYMENT CONFIRMATION SCREEN SHOWS LOT MORE INFO RATHER THAN WHAT WE HAVE IN A SINGLE DIV, THIS CODE SNIPPET IS TO OVERRIDE THAT -->
+        <overridable name="order" section="header">
+            <cart-header class="snipcart-checkout__header" :show-items-count="false" :show-summary="false" :show-account-menu="false">
+            </cart-header>
+        </overridable>
+
+
+        <overridable name="order" section="content">
+            <loading-screen message="order.loading" class="snipcart-layout__content">
+                <div v-if="cart">
+                    <div class="snipcart-order__details">
+                        <overridable name="order" section="content-header">
+                            <div class="snipcart__box snipcart-order__box snipcart-order__box__header">
+                                <div class="snipcart__box--title">
+                                    <div class="snipcart__box--badge snipcart__box--badge snipcart__box--badge-highlight snipcart__font--bold snipcart__font--secondary">
+                                        <icon name="checkmark" class="snipcart__icon--white snipcart__icon--large"></icon>
+                                    </div>
+                                    <div>
+                                        <h1 class="snipcart__font--subtitle">{{ $localize('confirmation.thank_you_for_your_order') }}</h1>
+                                    </div>
+                                </div>
+                                <div v-if="isConfirmationAsync" class="snipcart-order__async-confirmation-notice">
+                                    <flash-message type="success">
+                                        {{ $localize('confirmation.async_confirmation_notice') }}
+                                    </flash-message>
+                                </div>
+
+
+                              	<!--- following div > button visibility is toggled based on member auth status  
+                                <div v-if="localStorage.getItem('isUserAMember') === 'false'">
+                                  <button class="ctaRedirectBtn redButton-2" onclick="redirectToBrowse()">Check out more events</button>
+                                </div> --->	
+
+								<div>
+									 <button class="ctaRedirectBtn" onclick="redirectToBrowse()">Check out more events</button>
+                                </div>	
+                            </div>
+                        </overridable>
+
+                        <overridable name="order" section="content-main">
+                          	<!--- v-if="false" is responsible for hiding the rest of the sections in thank you confirmation page  --->
+                            <div v-if="false">
+                                <div class="snipcart-order__details__content">
+                                    <div class="snipcart__box snipcart-order__box">
+                                        <div class="snipcart-order__details-title snipcart__box--subtitle">
+                                            <icon name="cart" class="snipcart__icon--left snipcart__icon--blue-dark"></icon>
+                                            <h1 class="snipcart__font--subtitle">{{ $localize('header.title_cart_summary') }}</h1>
+                                        </div>
+
+                                        <cart-summary-items-list item-template="cart-summary-expanded-item"></cart-summary-items-list>
+                                    </div>
+
+                                    <billing-completed context="invoice" class="snipcart-billing-completed--titled snipcart-order__box"></billing-completed>
+                                    <shipping-completed context="invoice" class="snipcart-shipping-completed--titled snipcart-order__box" v-if="cart.shippingDetails.method"></shipping-completed>
+                                    <order-payment-details v-if="showPayment"></order-payment-details>
+                                    <footer class="snipcart__box snipcart-order__box snipcart-order__footer">
+                                        <cart-summary-fees class="snipcart-order__fees"></cart-summary-fees>
+                                    </footer>
+                                </div>
+                            </div>
+                        </overridable>
+                    </div>
+                </div>
+            </loading-screen>
+        </overridable>
+    </layout>
+</order>
+
+<!-- THE FOLLOWING MARKUP ADDS AMEX LOGO BY OVERRIDING -->
+  
+  <featured-payment-methods> 
+      <overridable name="featured-payment-methods" section="footer">
+        <div class="snipcart-featured-payment-methods">
+          <h3 class="snipcart__font--secondary snipcart__font--bold  snipcart-featured-payment-methods__title">
+              <a :href="securedByUrl" class="snipcart-featured-payment-methods__link" target="_blank" rel="nofollow noopener">
+                  <icon name="lock" class="snipcart-featured-payment-methods__title-icon"></icon>
+                  {{ $localize('cart.secured_by') }}
+              </a>
+          </h3>
+          <ul class="snipcart-featured-payment-methods__list">
+              <li class="snipcart-featured-payment-methods__list-item">
+                  <icon name="visa" alt="Visa" class="snipcart__icon--brand"></icon>
+              </li>
+              <li class="snipcart-featured-payment-methods__list-item">
+                  <icon name="mastercard" alt="Mastercard" class="snipcart__icon--brand"></icon>
+              </li>
+              <li class="snipcart-featured-payment-methods__list-item">
+                <icon name="card-amex" height="30" alt="AMEX" class="snipcart__icon--brand"></icon>
+            </li>
+          </ul>
+      </div>
+    </overridable>
+  </featured-payment-methods>
+<!-- overriding order page layout end -->
