@@ -124,3 +124,15 @@ document.addEventListener('snipcart.ready', function() {
 	}
 	});
 });
+
+//events cms page
+//script to find out number of attenddees(only signed up users) for the event. This output is used to show beside the button
+$(document).ready(function() {
+    //show counter when more than 1 member has signed
+    const attendeesCounter = $('.collection-item-8').length;
+    if (attendeesCounter.length > 1) {
+    $('.no_attendees').text(attendeesCounter);
+    } else {
+    $('.text-block-38').hide()
+    }
+});
