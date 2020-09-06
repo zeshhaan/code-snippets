@@ -112,6 +112,19 @@ $(document).ready(function() {
 });
 
 
+//Page: members page
+//Now depreciated -- this code snippet reloads the page as soon as the form is submitted hiding the webflow default success state
+var Webflow = Webflow || [];
+Webflow.push(function () {
+
+    $("#wf-form-Event-Preference-Form").submit(function (event) {
+        setTimeout(function () { location.reload(true); }, 1000);
+    });
+
+});
+
+
+
 //event cms page
 //script to override snipcart order confirmation screen
 document.addEventListener('snipcart.ready', function() {
@@ -142,4 +155,80 @@ $(document).ready(function() {
 const showAvatar = $('.collection-list-16').length;
     if(showAvatar.length < 1) {
     $('.div-block-77').hide()
-    }
+	}
+	
+//Sitewide custom code
+
+//Prefilling snipcart input form using members data from memberstack
+$( document ).ready(function() {
+	// Invoked when member-stack gets initialized
+	MemberStack.onReady.then(function (member) {
+	  localStorage.setItem("isUserAMember", !!member.loggedIn)
+	  if (member.loggedIn) {
+		let memberSecret = member["secret"];
+		let memberEmail = member["email"];
+		let memberID = member["id"];
+		let firstName = member["first-name"];
+		let lastName = member["last-name"];
+		/**
+		 * if user is logged in, the below code is
+		 * in-charge of pre-filling the billing details
+		 */
+		Snipcart.api.cart.update({
+		  email: memberEmail,
+		  metadata: {
+			customMetadataKey: memberSecret,
+		  },
+		});
+  
+	  /** THIS CODE IS DEPRECIATED
+	   * After logged-in user purchases an event
+	   * The following code redirects the user from the
+	   * payment success page to their dashboard or as a fallback
+	   * to the SpeakEasy landing page
+	   starts here
+		let BASE_URL =  window.location.protocol+"//"+window.location.host;
+		let redirectURL = member.memberPage
+		  ? BASE_URL+"/"+member.memberPage
+		  : BASE_URL;
+		Snipcart.events.on("cart.confirmed", () => {
+		  setTimeout(function () {
+			window.location = redirectURL;
+		  }, 10000);
+		}); ends here*/
+	  }
+	});
+  });
+  //INSTEAD WE WILL BE REDIRCTING USER TO /EVENTS PAGE UPON CLICKING THE BTN IN TICKET CONFIRMATION PAGE
+  function redirectToBrowse() {
+    let BASE_URL =  window.location.protocol+"//"+window.location.host;
+	window.location = BASE_URL + "/events"
+}
+
+//THIS CODE SNIPPET WILL CHANGE Province/State to State/Province
+document.addEventListener('snipcart.ready', function() {
+	Snipcart.api.session.setLanguage('en', {
+		actions: {
+		  checkout: "Check out",
+		  address_form: {
+			  province: "State/Province"
+		  }
+		}
+	});
+});
+
+
+//AND FINALLY THIS CODE SNIPPET STORES REFERRAL PARAMETER FROM URL STRING
+$(function() {
+	if (!('refs' in sessionStorage)){
+	  let queryString = window.location.search
+	  let urlParams = new URLSearchParams(queryString)
+	  let ref = urlParams.get('ref')
+	  sessionStorage.setItem('refs', ref)
+	}
+  });
+
+  //You may notice that we added a not(!) operator at the beginning, this is because certain times a user might get into website with referal link and not sign up, but this script is run and data is stored. So when the user visits the second time for sigining up, it will not return null that time.
+//alo you may have noticed
+
+

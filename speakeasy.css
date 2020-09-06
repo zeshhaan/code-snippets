@@ -1,0 +1,454 @@
+
+/* SITEWIDE STYLES TART HERE */
+
+/* Overrides the default memberstack provided success message bg color to our brand color */
+#ms-error-message-box{
+	background-color:#EA5044 !important;
+}
+
+/* Styling for the ticket confirmation screen button */
+.snipcart-order__box button.ctaRedirectBtn {
+    border-radius: 4px !important;
+    background-color: #ea5044 !important;
+    letter-spacing: 1px !important;
+    color: white !important;
+    margin-top: 15px !important;
+    position: relative !important;
+    left: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    display: block !important;
+    line-height: 1.2 !important;
+    font-size: 20px!important;
+    font-weight: 700 !important;
+    padding: 15px 15px !important;;
+  }
+
+  /* The default icon provided by snipcart is too tiny, so this styling modifies it to fit the other card icons already available in the site */
+  svg.snipcart__icon--brand.snipcart__icon[title="AMEX"]{transform: scale(3) !important;
+    width: 40px;}
+
+
+    /* Memberstack profile update form has a tab with the name of Memberships by default, this styling snippet hides it and removes extra spaces */
+    [ms-lang="profile_nav_member"][class="ms-portal-navlink"] {
+        visibility: hidden;
+        display: none;
+        }
+      
+          [class="ms-portal-menu-wrap"] [class="ms-portal-menu-spacer"]  {
+        visibility: hidden;
+        display: none;
+        }
+
+/* SITE WIDE STYLES END HERE */
+
+
+
+/* Scrollbar styling visible added on pages where scrollbar is available */
+/* The class would change depending upon the elenent we are styling but i tried to keep them same throughout, though in some instances you may see two of them */
+
+/*width*/
+.events-collection-list::-webkit-scrollbar {
+    width:auto;
+    }
+    /*track*/
+    .events-collection-list::-webkit-scrollbar-track {
+    background:transparent;
+    
+    }
+    /*thumb*/
+    .events-collection-list::-webkit-scrollbar-thumb {
+    background:rgb(254, 78, 78);
+    border-radius:8px;
+    }
+    
+    /*width on mobile*/
+    @media screen and (max-width: 991px) {
+      .events-collection-list::-webkit-scrollbar:horizontal {
+          height: 12px;
+      }
+    }
+
+
+    /* Page: Events CMS
+    The current webflow responsive screen breakdowns are not enough, so addded this styling to flex column  the event's header on that particular device width */
+
+    @media screen and (max-width: 1273px) {
+        .div-block-25{display: flex; flex-direction: column-reverse; justify-content:space-between; align-items: center;}
+    
+    .div-block-26 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-title.nobottommargin {
+      margin-top: 20px;
+      color: hsla(0, 12.00%, 7.74%, 1.00);
+      font-size: 2.5em;
+      line-height: 1;
+    }
+    .div-block-31{width:70vw}
+    }
+    
+    @media screen and (max-width: 763px) {
+    .div-block-31{width:90vw}
+    }
+
+
+
+/* SNIPCART CART STYLING STARTS HERE*/
+/* THESE ARE PRESENT IN BOTTOM OF EVENTS CMS PAGE */
+
+/* Remove "Continue shopping" text near the back arrow */
+span.snipcart-modal__close-title{
+	display:none;
+} 
+
+/* Apply native bytton styles */
+.snipcart-cart-button--highlight {
+   	background-image: unset;
+    background-image: unset;
+    background-color: #EA5044;
+    border-radius: 4px; 
+    font-size: 24px;
+		font-weight: 700;
+    line-height: 28px;
+}
+
+/* Resets the checkout form's default font family */
+[class^= "snipcart"] {
+   font-family: unset;
+}
+
+/* removes the shipping details */
+.snipcart-cart-summary-fees__notice{
+	display:none;
+}
+
+
+/* replaces the default blue SVG arrow to black */
+.snipcart__icon--blue-light path {
+    fill: #000;
+}
+
+/* adds shadow to the close button along with border styles. */
+button.snipcart-cart-header__close-button {
+		padding: 10px 12px 10px 12px;
+		border-radius: 4px;
+    box-shadow: 10px 10px 20px rgba(8, 25, 43, 0.10);
+    flex : 0;
+    background-color: white;
+    border: 2px solid;
+    /* transform: scale(1.2); */
+}
+
+svg:not(:root) {
+	transform: scale(1.2);
+}
+
+/* adds 30px margin to the left of the back button so that there is some breathing space in between */
+.snipcart-cart-header__title {
+    margin-left: 30px;
+}
+
+/* there seems to be a space next to the svg arrow in the back button and this code deletes that space */
+.snipcart-modal__close-icon {
+    margin-right: 0px;
+}
+ 
+/* Adds stroke width, by default it is 1px*/
+svg.snipcart__icon--blue-light{
+		stroke: black;
+}
+
+/* Removes the gradient bg and adds back the theme color*/
+.snipcart__box--badge-highlight {
+    background: unset;
+    background: #EA5044;
+}
+
+/* adds styling to the edit button during billing */
+.snipcart__actions--link {
+    color: #ea5044;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+		padding: 12px;
+		border-radius: 4px;
+    box-shadow: 10px 10px 20px rgba(8, 25, 43, 0.10);
+    border: 1px solid;
+    
+}
+
+/* this code only selects the 'edit' button to style instead of other buttons with similar classes */
+[class="snipcart__button--icon"] {
+    border-radius: 4px;
+    /* box-shadow: 10px 10px 20px rgba(8, 25, 43, 0.10); */
+    padding: 12px;
+    border: 1px solid;
+}
+
+.snipcart-typeahead__suggestions {
+		border: 1px solid #ea5044;
+}
+
+.snipcart-textbox--focus {
+    outline: none;
+    border: 1px solid #e7ebed;
+    box-shadow: 0 12px 24px 0 #eef6f9;
+} 
+
+[class="snipcart-textbox--focus"] {
+    border-radius: 0px;
+}
+
+
+li.snipcart-typeahead__suggestions{
+		border-radius: 0px;
+}
+
+.snipcart__button--icon:active,
+.snipcart__button--icon:focus {
+    outline: none;
+    border: 1px solid #ea5044;
+}
+
+.snipcart__button--with-icon:active,
+.snipcart__button--with-icon:focus {
+    outline: none;
+    border: 1px solid #ea5044;
+}
+
+.snipcart__button--with-icon:active,
+.snipcart__button--with-icon:focus {
+    outline: none;
+    border: 1px solid #ea5044;
+}
+
+.snipcart-checkbox:focus + label:before,
+.snipcart-checkbox:hover + label:before {
+    border: 1px solid #ea5044;
+}
+.snipcart-checkbox:checked + label:before {
+    border: 1px solid #ea5044;
+    background-color: #ea5044;
+    box-shadow: 0 0 0 3px rgba(234,80,68,0.45);
+    border-radius: 4px;
+}
+
+/* form focus border color*/
+.snipcart-form__select:focus {
+    outline: none;
+    border: 1px solid #ea5044;
+}
+
+/* form focus border color*/
+#snipcart-billing-form .snipcart-input:focus-within {
+    outline: none;
+    border: 1px solid #ea5044;
+    box-shadow: 0 0 0 3px rgba(234,80,68,0.45);
+    border-radius: 4px;
+}
+
+.snipcart-typeahead__suggestion--active {
+    background-color: #e7ebed;
+}
+
+.snipcart-payment-form--focussed{
+		border: 1px solid #ea5044;
+}
+
+/* add or less button color*/
+.snipcart-item-quantity__button:focus path {
+    fill: #000;
+}
+
+/* style invoice number after pay successful color*/
+.snipcart-order__invoice-number--highlight {
+    color: #ea5044;
+}
+
+/* checkbox color */
+.snipcart-checkbox:focus + label:before,
+.snipcart-checkbox:hover + label:before {
+    border: 1px solid #ea5044;
+}
+
+.snipcart__icon--blue-dark path {
+    fill: #509E3E;
+}
+
+.snipcart-payment-form--focused{
+		border: 1px solid #ea5044;
+}
+
+.snipcart-discount-box .snipcart-input input{
+	border: 0px;
+}
+
+.snipcart-discount-box__form .snipcart-input input:focus-within{
+	 border: 0px;
+}
+
+.snipcart-discount-box__form .snipcart-input :focus-within{
+	 border: 0px;
+   box-shadow: none;
+		border-radius: 0px;
+}
+
+/* changes checkout modal background  */
+.snipcart-modal__container, .snipcart-modal, 
+.snipcart-cart-header, .snipcart-cart__content, 
+.snipcart-featured-payment-methods__title {
+    background-color: #FFFFFF;
+}
+/* changes cart item background */
+.snipcart-item-line, 
+#snipcart-billing-form .snipcart__box, 
+.snipcart-payment.snipcart__box,
+.snipcart-cart-summary .snipcart-cart-summary__content,
+.snipcart-order__details .snipcart__box {
+    /*background-color: #FDE3E5; modified by zeeshan*/
+    background-color: #ea5044;
+}
+/* changes quantity element background */
+.snipcart-item-quantity__quantity {
+	/* background-color: #FDE3E5; modified by zeeshan*/
+	background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+/* Changes shopping cart icon color */
+.snipcart__icon--blue-dark path {
+ fill: #EA5044;
+}
+
+/* cart item title */
+.snipcart-item-line__header .snipcart-item-line__title,
+.snipcart-item-line__content .snipcart-item-description {
+ /* color: #000000; modified by zeeshan */ 
+ color: #fff; 
+ 
+}
+
+/* billing form input */
+.snipcart-input input,
+.snipcart-form__field .snipcart-typeahead {
+ border: 1px solid #000;
+ transition-property: border-width, border-color, border-radius;
+ transition-duration: 200ms, 200ms, 200ms, 200ms, 200ms;
+ transition-timing-function: ease, ease, ease, ease, ease;
+}
+
+
+/* hides cart title */
+.snipcart-cart-header__title {
+ display: none;
+}
+
+.snipcart-input:focus {outline-color:#EA5044; border:1px solid #EA5044; transition-property: border-width, border-color, border-radius; transition-duration: 200ms, 200ms, 200ms, 200ms, 200ms; transition-timing-function: ease, ease, ease, ease, ease;}
+.snipcart-input input:focus{ border:1px solid #EA5044; border-radius:4px}
+
+
+.snipcart__button--icon{
+	background-color: white; /* modified by zeeshan */
+}
+
+.snipcart-item-quantity__label{
+	color: white; /* modified by zeeshan */
+}
+
+.snipcart-item-line__container .snipcart-item-quantity__total-price{
+	color: white; /* modified by zeeshan */
+}
+
+.snipcart-cart-summary .snipcart-cart-summary__content {
+	background-color: #fff !important;
+  border-radius: 4px;
+  border: 2px solid black; /* modified by zeeshan */
+}
+
+.card_expiration_label{
+	color: white !important;; /* modified by zeeshan */
+}
+
+svg.snipcart-cart-button__icon.snipcart-cart-button__icon--right.snipcart__icon {
+    visibility: hidden;
+}
+
+
+*/
+.snipcart-payment {background-color: #f7fafa  !important;} /* modified by zeeshan */
+.snipcart-cart__content .snipcart-item-line {background-color: white !important; border-radius: 4px; border: 2px solid black;} /* modified by zeeshan */
+#snipcart-billing-form .snipcart__box {background-color: #fff; border: 2px solid black; border-radius: 4px;} /* modified by zeeshan */
+
+/* Snipcart Payment Form*/
+.snipcart-payment.snipcart__box {background-color: #fff; border: 2px solid black; border-radius: 4px;}
+/*
+
+/*completed form styling */
+.snipcart-billing-completed.snipcart__box--gray{background-color: hsla(230,11%,19%,1); color: white; border-radius: 4px;}
+.snipcart__box--badge {border: 2px solid #ea5044;}
+
+fieldset .snipcart-payment-form { border: 1px solid black !important; }
+fieldset .snipcart-payment-form.snipcart__box--focused {border: 1px solid #ea5044 !important;}
+fieldset .snipcart-payment-form:focus{outline-color: #ea5044 !important;}
+.snipcart-order__details .snipcart__box {
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.snipcart-item-line__content .snipcart-item-description {
+    color: #000;
+}
+
+.snipcart-discount-box__form {
+	border: 2px solid black;
+  border-radius: 4px;
+}
+.snipcart-discount-box__submit{
+	color:  #ea5044;
+}
+
+.snipcart-discount-box__form-container {background-color: #ffffff;}
+
+.snipcart-discount-box__button{
+		border: 2px solid #ea5044;
+    background-color: white;
+}
+
+.snipcart-discount-box__form .snipcart-input input:focus {
+    border: 0px;
+    box-shadow: none;
+}
+
+.snipcart-discount-box__button{
+	color: #ea5044;
+  font-weight: bold;
+}
+.snipcart-item-line__header .snipcart-item-line__title{ color: black; }
+
+.snipcart-custom-field-wrapper__input .snipcart-input__input{ border: none; padding-left: 0px; cursor: not-allowed; pointer-events: none}
+.snipcart-custom-field-wrapper__input .snipcart-input{ height: auto; border: none; cursor: not-allowed; pointer-events: none}
+.snipcart-text-custom-field{color: black;}
+.snipcart-item-custom-fields__field.snipcart-item-custom-fields--textbox{width: auto;}
+.snipcart-item-custom-fields__field .snipcart__font--tiny { font-size: 14px; line-height: 1.4; }
+.snipcart-item-custom-fields__field label {letter-spacing: 0px; text-transform: none;}
+
+.snipcart-item-custom-fields__field {
+    margin-bottom: 0px;
+}
+.snipcart-custom-field-wrapper__label {
+    margin-bottom: 0px; 
+}
+
+.snipcart-item-custom-fields__field .snipcart-custom-field-wrapper__input.snipcart__font--secondary.snipcart__font--std{display: none}
+
+.snipcart-item-custom-fields__field { padding-right: 10px;}
+
+.snipcart-item-custom-fields{ width: auto; font-weight: 600;}
+
+/* I hope most of the stylings are clear by it's naming, you may also notice a comment message made by 'x' that is to differentiate styling made by 2 folks while i and other develper were working, nvm */
