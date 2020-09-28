@@ -59,7 +59,3 @@
   .heading{ font-size: 1.2em; }
   .container-grid{ margin-top: 20px }
 
-  .resource-name-block-container{ 
-	overflow-wrap: anywhere; 
-  	word-break: break-word; 
-  }
