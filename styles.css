@@ -1,4 +1,4 @@
-/* This lets you wrap the word if it's too lonsg and there is an absolute element next to it */
+/* This lets you wrap the word if it's too long and there is an absolute element next to it */
 
 overflow-wrap: anywhere; 
 word-break: break-word; 
