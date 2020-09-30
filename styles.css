@@ -2,3 +2,21 @@
 
 overflow-wrap: anywhere; 
 word-break: break-word; 
+
+/* This lets you center the fixed divs  */
+
+left: 50%;
+transform: translateX(-50%);
+
+/* Vertical center */
+
+top: 50%;
+transform: translateY(-50%);
+
+/* horizontal + vertcial center */
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+
+/* Reference : https://stackoverflow.com/questions/3157372/css-horizontal-centering-of-a-fixed-div */
+/* Compatibility : http://caniuse.com/#feat=transforms2d */
