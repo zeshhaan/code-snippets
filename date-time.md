@@ -66,7 +66,7 @@ You can test if it works for other locations by overriding the browser location 
 #### Further Reading
 [You Probably Don't Need Moment.js Anymore](https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore)  
 [Github/ You-Dont-Need-Momentjs](https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md)  
-[MDN/ .toLocaleTimeString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString) 
+[MDN/ .toLocaleTimeString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)  
 [MDN/ Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)  
 [MDN/ Intl.DateTimeFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)  
 [MDN/ Intl.DateTimeFormat.prototype.resolvedOptions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/resolvedOptions)
