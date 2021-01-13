@@ -1,6 +1,6 @@
 ## How to display date and time in the user's time-zone/local time
-There might be instances where you want to display certain things to the user's local time. Let's, for an example think about Event Website where vistors can purchase event tickets. Knowing when the event will take place in their time zone might be complicated as users must either google for the local time and match with the event time to confirm if that suits. This is kinda weird and a bad UX which we need o solve.  
-The most ideal solution would be to dynamically display the date part depending upon the visitors location. People have been solving this using a library called Moment.js but now since this library have been turned to legacy mode, we must think of a different solution. But glad, we have native time and date methods in-built in our JavaScript so actually we don't want any library. Moreover suing these native JS code has been having performance gains.  
+There might be instances where you want to display certain things to the user's local time. Let's, for an example think about Event Website where vistors can purchase event tickets. Knowing when the event will take place in their time zone might be complicated as users must google for the local time and match with the event time to confirm if that suits. This is kinda weird and a bad UX which we need to solve.  
+The most ideal solution would be to dynamically display the date part depending upon the visitors location. People have been solving this using a library called Moment.js but now since this library have been turned to legacy mode, we must think of a different solution. But glad, we have native time and date methods in-built in our JavaScript so actually we don't want any library. Moreover using these native JS code has been having performance gains.  
   
 >> It was bit tricky to implement and i spent hours debugging the code and browsing threads/mdn docs, etc and this is by far simple bit-sized concise explaination and code snippet you will ever need to convert your already set date to the users local time-zone.  
 
@@ -65,6 +65,7 @@ You can test if it works for other locations by overriding the browser location 
 
 #### Further Reading
 [You Probably Don't Need Moment.js Anymore](https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore)  
+[Github/ You-Dont-Need-Momentjs](https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md)  
 [MDN/ .toLocaleTimeString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString) 
 [MDN/ Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)  
 [MDN/ Intl.DateTimeFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)  
