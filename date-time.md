@@ -24,8 +24,9 @@ After adding a date field inside CMS, we can then dynamically insert them to the
 > Note that if you have setup date field with both date and time, then you must insert it CMS field in the RAW format as i did in line 13
 
 After that you can specify the text field to which the formatted date and time need to be populated/inserted.
+##### This is how running above code snippet looks like in an application i tested
+<img src="src/Screenshot 2021-01-13 at 10.59.35 PM.png" width="350">
 
-This is how running above code snippet looks like.
 
 To advance further more on this topic, checkout the resource links posted at the end of this article
 
@@ -58,8 +59,8 @@ const date = {
 ```
 I used this method instead of the first method just vecause i want to get rid of capital AM/PM. But more than that approach is more performant that the former.
 
-This is how it looks like
-
+##### This is how it looks like while tested in a live website
+<img src="/src/Screenshot 2021-01-13 at 11.07.32 PM.png" width="250">
 
 You can test if it works for other locations by overriding the browser location in Chrome Developer Tools > Sensors
 
