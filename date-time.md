@@ -64,6 +64,32 @@ I used this method instead of the first method just vecause i want to get rid of
 
 You can test if it works for other locations by overriding the browser location in Chrome Developer Tools > Sensors
 
+### Some Important Notes:
+
+#### 1. Adding Date field from CMS would omit Time and how to solve that.
+
+You have to take it's raw format and inspect. Then add the missing hrs and minutes.
+
+<img src="/src/Screenshot 2021-01-15 at 5.47.42 PM.png" width="800">
+
+You can also add a time zone at the end to be more specific about the origin location. In my case, i had to work on an Event website so it's important to know the original data and the folks from other location can see the event relative to that date. In line 40, you can see i have added `PST` to the end of the dynamic Date and Time string. 
+
+
+#### 2. Date Separator Bug in Safari leads to `RangeError: date value is not finite in DateTimeFormat format()` in Safari and how to solve it
+
+<img src="/src/Screenshot 2021-01-15 at 4.55.50 PM.png" width="250">  
+
+The Date Time Field in CMS parses `01/14/2021 11:00 AM` to `2021-01-14 11:00 am` when page is rendered. Safari doesn't treat this `-` separator as a valid format and instead it accepts `/` separator. A simple solution would be using a regex formula to convert the separator as highlighted in this [Stackoverflow response](https://stackoverflow.com/a/5646753/9826170)
+
+```javascript
+console.log (new Date('2011-04-12'.replace(/-/g, "/")));
+```
+
+There the code we wrote at line 40 would be rewritten as 
+```javascript
+const start = new Date('{{wf {&quot;path&quot;:&quot;start-date&quot;,&quot;transformers&quot;:[{&quot;name&quot;:&quot;date&quot;,&quot;arguments&quot;:[&quot;YYYY-MM-DD hh:mm a&quot;]\}],&quot;type&quot;:&quot;Date&quot;\} }} PST'.replace(/-/g, "/"))
+```
+
 #### Further Reading
 [You Probably Don't Need Moment.js Anymore](https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore)  
 [Github/ You-Dont-Need-Momentjs](https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md)  
