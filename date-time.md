@@ -81,6 +81,8 @@ You can also add a time zone at the end to be more specific about the origin loc
 
 The Date Time Field in CMS parses `01/14/2021 11:00 AM` to `2021-01-14 11:00 am` when page is rendered. Safari doesn't treat this `-` separator as a valid format and instead it accepts `/` separator. A simple solution would be using a regex formula to convert the separator as highlighted in this [Stackoverflow response](https://stackoverflow.com/a/5646753/9826170)
 
+<img src="/src/Screenshot 2021-01-15 at 6.02.23 PM.png" width="350">
+
 ```javascript
 console.log (new Date('2011-04-12'.replace(/-/g, "/")));
 ```
