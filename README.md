@@ -7,3 +7,9 @@
 2. Paste that formatted raw URL into [JSDeliver](https://www.jsdelivr.com/rawgit)
 3. Copy the JSDeliver URL and paste paste into the link element's href attribute.
     ` <link rel="stylesheet" type="text/css" href="INSERT_JSDELIVER_URL_HERE"> `
+
+## Update Date and Time Element dynamicaly and locally to user's time-zone
+[Markdown Post](https://github.com/zeshhaan/code-snippets/blob/main/date-time.md)
+
+## Finsweet CMS Filter automation with DOM Manipulation [just my use case]
+The other day i had to setup filter for events listed. The filter group will show events taking place in the next three months. We had to change month by month manually so i hsetup a script that would automate this. [Checkout this markdown post for detailed explaination.](https://github.com/zeshhaan/code-snippets/blob/main/monthModifier.md)
