@@ -1,4 +1,5 @@
 # code-snippets
+Inspired by [@rileyrichter](https://github.com/rileyrichter)'s [Snippets](https://github.com/rileyrichter/snippets)
 
 ## How to upload stylesheet into Webflow
 
