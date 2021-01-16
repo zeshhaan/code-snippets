@@ -8,7 +8,8 @@
 3. Copy the JSDeliver URL and paste paste into the link element's href attribute.
     ` <link rel="stylesheet" type="text/css" href="INSERT_JSDELIVER_URL_HERE"> `
 
-## Update Date and Time Element dynamicaly and locally to user's time-zone
+## Update Date and Time Element dynamically and locally to a user's time-zone
+<img src="src/Screenshot 2021-01-13 at 10.59.35 PM.png" width="350">  
 [Markdown Post](https://github.com/zeshhaan/code-snippets/blob/main/date-time.md)
 
 ## Finsweet CMS Filter automation with DOM Manipulation [just my use case]
