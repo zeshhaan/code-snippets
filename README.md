@@ -11,6 +11,7 @@ Inspired by [@rileyrichter](https://github.com/rileyrichter)'s [Snippets](https:
 
 ## [Update Date and Time Element dynamically and locally to a user's time-zone](https://github.com/zeshhaan/code-snippets/blob/main/date-time.md)    
 <img src="src/Screenshot 2021-01-13 at 10.59.35 PM.png" width="350">  
+A custom script to detect users time zone and convert the event data and calendar link to users time zone.
 
 
 
