@@ -1,5 +1,5 @@
 Hey gang!  
-From my past 3 years as a no-code freelancer, one of the biggest frustration I witnessed from the founders/clients, etc was about scaling. This is a stage most of us realize that no-code is fundamentally limiting. There are lots of issues that when you plan to scale your business build upon a no-code stack. One of which is pricing, the other is the whole <what's the appropriate word here?> limit of the no-code platform, for example, CMS item limit in Webflow will cause you lot of trouble when you try to update some content and it may take a couple of minutes or even more to move a mouse around.
+From my past 3 years as a no-code freelancer, one of the biggest frustration I witnessed from the founders/clients, etc was about scaling. This is a stage most of us realize that no-code is fundamentally limiting. There are lots of issues that when you plan to scale your business build upon a no-code stack. One of which is exponential pricing, the other is the whole <what's the appropriate word here?> limit of the no-code platform, for example, CMS item limit in Webflow will cause you lot of trouble when you try to update some content and it may take a couple of minutes or even more to move a mouse around.
 
 Here is a couple of tips that worked out well for me.
 
